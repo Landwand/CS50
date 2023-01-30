@@ -1,0 +1,13 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It performs -very- well for a Sorted, but is slowest for Reversed and Random. This indicates a low Omega, while having a slower
+Big O. Much as O(n^2) and theta(n).
+
+sort2 uses: Merge Sort
+
+How do you know?: Results across Sorted, Reversed & Random are (relatively) even, and all of them are -very- fast. This looks like Merge Sort,
+which has a theta(n log n) which means equally good performance across all cases.
+
+sort3 uses: Selection Sort
+
+How do you know?: Relatively equal performance across each type of file. Consistently 'slow'. This looks like Selection Sort which has theta(n^2)

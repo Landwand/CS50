@@ -1,0 +1,53 @@
+:root {
+  --bs-body-bg: #fff;
+  --grey: rgb(81, 85, 117);
+}
+
+html, body {
+  background-color: $indigo-900;
+  height: 100%;
+  margin: 0;
+
+}
+
+
+.centeredBold {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  color: rgb(81, 85, 117);
+}
+
+.myh1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.centeredBox {
+  margin: auto;
+  width: 50%;
+  border: 2px solid azure;
+  padding: 10px;
+  text-align: center;
+  color: var(--grey);
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  background: #111;
+}
+
+.full-height {
+  height: 100%;
+  background: black;
+}
+
+.reg-text {
+  color: gray;
+  text-align: left;w
+}
+
+
+
+

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+    <h1 class="hometitle">Add Cash</h1>
+
+    <img src="/static/monop.jpg" alt="Monopoly man" class="landing_img">
+
+        <h2>Your Current Cash Balance $ </h2>
+        <table class="table thead-light mytable">
+            <thead>
+                <tr>
+                    <th>CASH</th>
+                </tr>
+                <td>$ {{ cash }}</td>
+        </table>
+
+        <div>
+            <form action="/" method="post">
+                <label for="add_cash">Add $ to your CASH </label><br>
+                <input type="number" name="add_cash" required placeholder = "0"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+{% endblock %}

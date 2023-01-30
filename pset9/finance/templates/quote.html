@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+
+        <div class="container-fluid"><h1>**Quote**</h1></div>
+        <img src="/static/futurama_exchange.jpeg" alt="Stock Exchange" class="landing_img">
+        {% if oldquote %}
+
+            <h1>Latest quote: {{ oldquote }}, || ${{ oldprice }}</h1>
+        {% else %}
+            <h1>Get yourself quoted.</h1>
+        {% endif %}
+
+        <form action="/quote" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Stock Symbol" type="text">
+
+            <button class="btn btn-primary" type="submit">Get Quote</button>
+        </form>
+
+    {% endblock %}
