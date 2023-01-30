@@ -1,6 +1,5 @@
 ## Lab 1: "POPULATION"
 Goal: calculates the # of years required to grow a population from start to end-size.
-
 Implementation details at: https://cs50.harvard.edu/x/2023/labs/1/#lab-1-population-growth
 
 ## Problem Set 1: "HELLO"
