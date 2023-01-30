@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1> Bad Birthdate! </h1>
+    <br>
+    This page will redirect you soon!
+    <br>
+    <script type="text/javascript" class="init">
+        setTimeout(function(){
+    window.location.href = "/";
+    }, 2000);
+    </script>
+
+{% endblock %}

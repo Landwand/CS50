@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+        <div>
+            <h1>BUY BUY BUY !!!!!</h1>
+            <img src="/static/cashman.jpeg" alt="Oliver da Cashman!" class="landing_img">
+        </div>
+
+
+        {% if oldquote %}
+            <h1>Latest quote: {{ oldquote }}, || ${{ oldprice }}</h1>
+        {% else %}
+            <h1>Nab a quote: </h1>
+        {% endif %}
+
+        <form action="/buy" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="quote" placeholder="Stock Symbol" type="text">
+
+            <button class="btn btn-primary" type="submit">Get Quote</button>
+        </form>
+
+        <hr>
+        <h1> Buy Some Shares </h1>
+        <div>
+            Your buying power $ : {{ cash }}  .
+        </div>
+        <form action="/buy" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Stock Symbol" type="text">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="number shares" type="text">
+
+            <button class="btn btn-primary" type="submit">Buy Stock</button>
+        </form>
+
+
+    {% endblock %}

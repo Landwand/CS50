@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock History
+{% endblock %}
+
+{% block main %}
+
+<h1 class="hometitle">History</h1>
+
+<div class="container-md p-4">
+    <img src="/static/stock_trader_old.jpeg" alt="Goofy Gundam" class="landing_img">
+</div>
+
+<div class="container-md">
+
+</div>
+
+<div class="mx-auto center">
+<table class="table table-dark mytable table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>symbol</th>
+            <th>action</th>
+            <th>price</th>
+            <th>shares</th>
+            <th>datetime</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in history %}
+            {% set dt = event['datetime'] %}
+            {% set dt = dt[:22] %}
+            <tr>
+                <td>{{ event['id'] }}</td>
+                <td>{{ event['symbol'] }}</td>
+                <td>{{ event['action'] }}</td>
+                <td>{{ event['price'] }}</td>
+                <td>{{ event['shares'] }}</td>
+                <td>{{ dt }}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+{% endblock %}

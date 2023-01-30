@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm speller
+clear
+echo "speller deleted"
+make speller
+echo "/n speller Made"

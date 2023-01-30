@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+
+            function to_red(id,){
+                document.getElementById(id).style.background='red';
+            }
+
+            function to_green(id){
+                document.getElementById(id).style.background='green';
+            }
+
+            function display_incorrect(id){
+                document.getElementById(id).innerHTML = "Incorrect"
+            }
+
+            function display_correct(id){
+                document.getElementById(id).innerHTML = "Correct!";
+            }
+
+            function test(){
+                window.alert("test");
+            }
+
+            function wrong(id, msg_id){
+                display_incorrect(msg_id);
+                to_red(id);
+            }
+
+            function right(id, msg_id){
+                display_correct(msg_id);
+                to_green(id);
+            }
+
+            function check_q2(id, msg_id){
+                let q2_val = document.getElementById("q2_ans").value;
+                // console.log(document.getElementById("q2_ans").value);
+                console.log('q2 val = ', q2_val);
+                if (q2_val == "78"){
+                    right(id, msg_id);
+                    // window.alert("right!! RX-78-2");
+                }
+                else {
+                    // window.alert("wrong!");
+                    wrong(id, msg_id);
+                }
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is Amuro's final Gundam?</h3>
+                <p id = "final"> result here</p>
+                <hr>
+                    <button id = "alex" onclick ="wrong('alex', 'final');"> NT-1 Alex </button>
+                    <button id = "regz" onclick ="wrong('regz', 'final');"> RE-GZ </button>
+                    <button id = "gp01" onclick ="wrong('gp01', 'final');"> GP-01 </button>
+                    <button id = "nu" onclick ="right('nu', 'final');"> Nu </button>
+                    <button id = "z" onclick ="wrong('z', 'final');"> Zeta </button>
+                    <hr>
+                </div>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+
+            <h3>What is the (numerical) serial of Amuro's First Gundam?</h3>
+            <p id="first_gundam"> result here </p>
+            <hr>
+            <!-- TODO: Add free response question here -->
+            <form id = "q2">
+                <label for="q2_label">RX-(answer)-2</label><br>
+                <input type="text" id="q2_ans" name="q2_ans" value=""><br>
+                <button id = "confirm_q2" onclick = "check_q2('q2_ans','first_gundam');">Confirm</button>
+            </form>
+
+            <p id = "q2_res"></p>
+        <hr>
+        <button id = "refresh" onclick ='location.reload();'>Reload Browser </button>
+        </div>
+        </div>
+    </body>
+</html>

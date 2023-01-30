@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS50 Finance Stock Site
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="hometitle">CS50 Finance Stock Site Home</h1>
+
+    <img src="/static/goofy_78.webp" alt="Goofy Gundam" class="landing_img">
+
+    {% if not portfolio: %}
+        <div class="m-5">
+            You have nothing, loser!
+        </div>
+
+    {% else %}
+        <div class="m-5">
+            <h2>Here are your positions:</h2>
+        </div>
+
+        <table class="table table-dark mytable table-striped">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>SYMBOL</th>
+                    <th>PRICE</th>
+                    <th>SHARES</th>
+                    <th>VALUE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for folio in portfolio %}
+                    <tr>
+                        <td>{{ folio['name'] }}</td>
+                        <td>{{ folio['symbol'] }}</td>
+                        <td>$ {{ folio['price'] }}</td>
+                        <td>{{ folio['shares'] }}</td>
+                        <td>$ {{ folio['value'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Your Valuation $ </h2>
+        <table class="table thead-light mytable">
+            <thead>
+                <tr>
+                    <th>CASH</th>
+                    <th>HOLDINGS</th>
+                    <th>TOTAL</th>
+                </tr>
+                <td>$ {{ user_value['cash'] }}</td>
+                <td>$ {{ user_value['holdings'] }}</td>
+                <td>$ {{ user_value['grand_total'] }}</td>
+        </table>
+
+        <div>
+            <form action="/" method="post">
+                <label for="add_cash">Add $ to your CASH </label><br>
+                <input type="number" name="add_cash" required placeholder = "0"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {% endif %}
+
+{% endblock %}

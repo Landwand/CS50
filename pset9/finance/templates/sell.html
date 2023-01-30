@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+        <div>
+            <h1>SELLLLLLL SELLLL SELLL SELLLL !!!!!</h1>
+            <img src="/static/sell.jpeg" alt="stock traders" class="landing_img">
+        </div>
+
+        {% if oldquote %}
+            <h1>Latest quote: {{ oldquote }}, || ${{ oldprice }}</h1>
+        {% else %}
+            <h1>Nab a quote: </h1>
+        {% endif %}
+
+        <form action="/sell" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="quote" placeholder="Stock Symbol" type="text">
+
+            <button class="btn btn-primary" type="submit">Get Quote</button>
+        </form>
+
+        <hr>
+        <h1> Sell Shares </h1>
+        <div>
+            Your CASH amount  : $ {{ cash }}
+        </div>
+
+        <form action="/sell" method="post">
+            <div class="mb-3">
+                <select name="symbol">
+                    {% for symbol in symbols %}
+                        <option value="{{ symbol }}">{{ symbol }}</option>
+                    {% endfor %}
+                </select>
+
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="number shares" type="number" min = "1">
+            <button class="btn btn-primary" type="submit">Sell Stock</button>
+        </form>
+
+    {% endblock %}
+
+    <input type="text" id="name" name="name" required
+       minlength="4" maxlength="8" size="10">
